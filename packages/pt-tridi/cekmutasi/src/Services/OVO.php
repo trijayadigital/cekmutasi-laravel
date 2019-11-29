@@ -2,10 +2,10 @@
 
 namespace PTTridi\Cekmutasi\Services;
 
-use PTTridi\Cekmutasi\BaseClass;
+use PTTridi\Cekmutasi\Container;
 use PTTridi\Cekmutasi\Support\Constant;
 
-class OVO extends BaseClass
+class OVO extends Container
 {
 	private $config = [];
 
@@ -21,13 +21,13 @@ class OVO extends BaseClass
 	*
 	*	@param Array $options
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
 	public function search($options = [])
 	{
-		return $this->request('/ovo/search', Constant::HTTP_POST, [
+		return $this->curl('/ovo/search', Constant::HTTP_POST, [
 			'search'	=> $options
 		]);
 	}
@@ -37,13 +37,13 @@ class OVO extends BaseClass
 	*
 	*	@param String $sourceNumber
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
 	public function transferBankList($sourceNumber)
 	{
-		return $this->request('/ovo/transfer/bank-list', Constant::HTTP_POST, [
+		return $this->curl('/ovo/transfer/bank-list', Constant::HTTP_POST, [
 			'source_number'	=> $sourceNumber
 		]);
 	}
@@ -57,13 +57,13 @@ class OVO extends BaseClass
 	*
 	*	@param String $destinationNumber
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
 	public function transferBankInquiry($sourceNumber, $bankCode, $destinationNumber)
 	{
-		return $this->request('/ovo/transfer/inquiry', Constant::HTTP_POST, [
+		return $this->curl('/ovo/transfer/inquiry', Constant::HTTP_POST, [
 			'source_number'	=> $sourceNumber,
 			'bank_code'	=> $bankCode,
 			'destination_number'	=> $destinationNumber
@@ -81,13 +81,13 @@ class OVO extends BaseClass
 	*
 	*	@param String $note
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
 	public function transferBank($uuid, $token, $amount, $note = '')
 	{
-		return $this->request('/ovo/transfer/send', Constant::HTTP_POST, [
+		return $this->curl('/ovo/transfer/send', Constant::HTTP_POST, [
 			'uuid'	=> $uuid,
 			'token'	=> $token,
 			'amount'	=> $amount,
@@ -100,13 +100,13 @@ class OVO extends BaseClass
 	*
 	*	@param String $uuid
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
 	public function transferBankDetail($uuid)
 	{
-		return $this->request('/ovo/transfer/detail', Constant::HTTP_GET, [
+		return $this->curl('/ovo/transfer/detail', Constant::HTTP_GET, [
 			'uuid'	=> $uuid
 		]);
 	}
@@ -118,13 +118,13 @@ class OVO extends BaseClass
 	*
 	*	@param String $destinationNumber
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
 	public function transferOVOInquiry($sourceNumber, $destinationNumber)
 	{
-		return $this->request('/ovo/transfer/send', Constant::HTTP_POST, [
+		return $this->curl('/ovo/transfer/send', Constant::HTTP_POST, [
 			'source_number'	=> $sourceNumber,
 			'phone'	=> $destinationNumber
 		]);
@@ -139,13 +139,13 @@ class OVO extends BaseClass
 	*
 	*	@param Int $amount
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
 	public function transferOVO($sourceNumber, $destinationNumber, $amount)
 	{
-		return $this->request('/ovo/transfer/send', Constant::HTTP_POST, [
+		return $this->curl('/ovo/transfer/send', Constant::HTTP_POST, [
 			'source_number'	=> $sourceNumber,
 			'phone'	=> $destinationNumber,
 			'amount'	=> $amount

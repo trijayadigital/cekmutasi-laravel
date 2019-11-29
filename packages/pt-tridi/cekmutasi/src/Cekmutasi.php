@@ -8,7 +8,7 @@ use PTTridi\Cekmutasi\Services\OVO;
 use PTTridi\Cekmutasi\Services\GoPay;
 use PTTridi\Cekmutasi\Support\Constant;
 
-class Cekmutasi extends BaseClass
+class Cekmutasi extends Container
 {
     public function __construct()
     {
@@ -74,25 +74,25 @@ class Cekmutasi extends BaseClass
     /**
 	*	Check your IP
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
     public function checkIP()
     {
-    	return $this->request('/myip', Constant::HTTP_POST);
+    	return $this->curl('/myip', Constant::HTTP_POST);
     }
 
     /**
 	*	Check your cekmutasi balance
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
     public function balance()
     {
-    	return $this->request('/balance', Constant::HTTP_POST);
+    	return $this->curl('/balance', Constant::HTTP_POST);
     }
 
     /**
@@ -117,7 +117,7 @@ class Cekmutasi extends BaseClass
         }
         else
         {
-            if( $apiSignature != $incomingSignature ) {
+            if( $this->apiSignature != $incomingSignature ) {
                 \Log::info(get_class($this).': Invalid Signature, ' . $this->apiSignature . ' vs ' . $incomingSignature);
                 exit("Invalid signature!");
             }

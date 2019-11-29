@@ -2,10 +2,10 @@
 
 namespace PTTridi\Cekmutasi\Services;
 
-use PTTridi\Cekmutasi\BaseClass;
+use PTTridi\Cekmutasi\Container;
 use PTTridi\Cekmutasi\Support\Constant;
 
-class Bank extends BaseClass
+class Bank extends Container
 {
 	private $config = [];
 
@@ -21,13 +21,13 @@ class Bank extends BaseClass
 	*
 	*	@param Array $options
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
 	public function search($options = [])
 	{
-		return $this->request('/bank/search', Constant::HTTP_POST, [
+		return $this->curl('/bank/search', Constant::HTTP_POST, [
 			'search'	=> $options
 		]);
 	}

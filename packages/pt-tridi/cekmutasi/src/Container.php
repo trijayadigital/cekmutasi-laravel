@@ -8,11 +8,10 @@ use PTTridi\Cekmutasi\Services\OVO;
 use PTTridi\Cekmutasi\Services\GoPay;
 use PTTridi\Cekmutasi\Support\Constant;
 
-class BaseClass
+class Container
 {
-	protected $apiKey = "";
-	protected $apiSignature = "";
-    protected $apiUrl = "https://api.cekmutasi.co.id/v1";
+	protected $apiKey;
+	protected $apiSignature;
 
     public function __construct()
     {
@@ -33,9 +32,9 @@ class BaseClass
 	*
 	**/
 
-	protected function request($endpoint, $method = Constant::HTTP_GET, $params = [])
+	protected function curl($endpoint, $method = Constant::HTTP_GET, $params = [])
     {
-    	$url = $this->apiUrl . $endpoint;
+    	$url = Constant::API_BASEURL . '/'.ltrim($endpoint, '/');
 
     	$ch = curl_init();
 
@@ -55,7 +54,7 @@ class BaseClass
         curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             	'Api-Key: ' . $this->apiKey,
-            	'Accept: application/json',
+            	'Accept: ' . Constant::FORMAT_JSON,
                 'User-Agent: Cekmutasi Laravel/' . Constant::VERSION
             ]);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);

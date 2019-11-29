@@ -2,10 +2,10 @@
 
 namespace PTTridi\Cekmutasi\Services;
 
-use PTTridi\Cekmutasi\BaseClass;
+use PTTridi\Cekmutasi\Container;
 use PTTridi\Cekmutasi\Support\Constant;
 
-class PayPal extends BaseClass
+class PayPal extends Container
 {
 	private $config = [];
 
@@ -21,13 +21,13 @@ class PayPal extends BaseClass
 	*
 	*	@param Array $options
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
 	public function search($options = [])
 	{
-		return $this->request('/paypal/search', Constant::HTTP_POST, [
+		return $this->curl('/paypal/search', Constant::HTTP_POST, [
 			'search'	=> $options
 		]);
 	}
@@ -39,13 +39,13 @@ class PayPal extends BaseClass
 	*
 	*	@param String $transactionid
 	*
-	*	@return Object PTTridi\Cekmutasi\BaseClass::request()
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
 	public function detail($username, $transactionid)
 	{
-		return $this->request('/paypal/detail', Constant::HTTP_POST, [
+		return $this->curl('/paypal/detail', Constant::HTTP_POST, [
 			'username'	=> $username,
 			'transactionid' => $transactionid
 		]);
