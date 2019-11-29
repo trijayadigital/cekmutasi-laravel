@@ -7,6 +7,7 @@ use PTTridi\Cekmutasi\Services\PayPal;
 use PTTridi\Cekmutasi\Services\OVO;
 use PTTridi\Cekmutasi\Services\GoPay;
 use PTTridi\Cekmutasi\Support\Constant;
+use Illuminate\Http\Request;
 
 class Cekmutasi extends Container
 {
@@ -104,7 +105,7 @@ class Cekmutasi extends Container
 	*
 	**/
 
-    public function catchIPN(\Illuminate\Http\Request $request)
+    public function catchIPN(Request $request)
     {
         $incomingSignature = $request->server('HTTP_API_SIGNATURE', '');
 
