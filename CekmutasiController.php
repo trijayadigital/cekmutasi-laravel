@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use PTTridi\Cekmutasi\Cekmutasi;
+use Cekmutasi;
 use Illuminate\Http\Request;
 
 class CekmutasiController extends Controller
