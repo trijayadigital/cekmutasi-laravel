@@ -2,10 +2,6 @@
 
 namespace PTTridi\Cekmutasi;
 
-use PTTridi\Cekmutasi\Services\Bank;
-use PTTridi\Cekmutasi\Services\PayPal;
-use PTTridi\Cekmutasi\Services\OVO;
-use PTTridi\Cekmutasi\Services\GoPay;
 use PTTridi\Cekmutasi\Support\Constant;
 
 class Container
