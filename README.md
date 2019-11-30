@@ -59,11 +59,11 @@ You can use cekmutasi library by importing cekmutasi class. Here is the example 
 
 namespace App\Http\Controllers;
 
-use PTTridi\Cekmutasi\Cekmutasi;
+use Cekmutasi;
 
 class AnotherController extends Controller
 {
-    $mutation = Cekmutasi::bank()-&#x3E;search([
+    $mutation = Cekmutasi::bank()-&#x3E;mutation([
 				'date'		=&gt; [
 					'from'	=&gt; date('Y-m-d') . ' 00:00:00',
 					'to'	=&gt; date('Y-m-d') . ' 23:59:59'
