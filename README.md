@@ -85,6 +85,9 @@ For further example, you can check out in **CekmutasiController.php** included i
 * ### [checkIP()](packages/pt-tridi/cekmutasi/src/Cekmutasi.php#L82)
 	Check your detected IP address. This IP should be added to Whitelist IP in your integration if you want to use HTTP Request method or some plugins
 	
+* ### [catchIPN()](packages/pt-tridi/cekmutasi/src/Cekmutasi.php#L108)
+	Handle callback/ipn data. This method is highly recommended for use because it has pre-build callback/ipn security verification
+	
 * ### [bank()](packages/pt-tridi/cekmutasi/src/Cekmutasi.php#L28)
 	Load Bank service. Below are the available methods from bank service
 	- #### [list()](packages/pt-tridi/cekmutasi/src/Services/Bank.php#L42)
