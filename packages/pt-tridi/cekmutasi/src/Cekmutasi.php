@@ -8,6 +8,7 @@ use PTTridi\Cekmutasi\Services\OVO;
 use PTTridi\Cekmutasi\Services\GoPay;
 use PTTridi\Cekmutasi\Support\Constant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class Cekmutasi extends Container
 {
@@ -107,19 +108,24 @@ class Cekmutasi extends Container
 
     public function catchIPN(Request $request)
     {
-        $incomingSignature = $request->server('HTTP_API_SIGNATURE', '');
+        $incomingSignature = $request->server('HTTP_API_SIGNATURE');
+
+        if( empty($incomingSignature) ) {
+            Log::info(get_class($this).': Undefined Signature');
+            exit("Undefined signature!");
+        }
 
         if( version_compare(PHP_VERSION, '5.6.0', '>=') )
         {
             if( !hash_equals($this->apiSignature, $incomingSignature) ) {
-                \Log::info(get_class($this).': Invalid Signature, ' . $this->apiSignature . ' vs ' . $incomingSignature);
+                Log::info(get_class($this).': Invalid Signature, ' . $this->apiSignature . ' vs ' . $incomingSignature);
                 exit("Invalid signature!");
             }
         }
         else
         {
             if( $this->apiSignature != $incomingSignature ) {
-                \Log::info(get_class($this).': Invalid Signature, ' . $this->apiSignature . ' vs ' . $incomingSignature);
+                Log::info(get_class($this).': Invalid Signature, ' . $this->apiSignature . ' vs ' . $incomingSignature);
                 exit("Invalid signature!");
             }
         }
@@ -128,7 +134,7 @@ class Cekmutasi extends Container
         $decoded = json_decode($json);
 
         if( json_last_error() !== JSON_ERROR_NONE ) {
-            \Log::info(get_class($this).': Invalid JSON, ' . $json);
+            Log::info(get_class($this).': Invalid JSON, ' . $json);
             exit("Invalid JSON!");
         }
 

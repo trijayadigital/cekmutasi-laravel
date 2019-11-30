@@ -26,7 +26,7 @@ class Container
 	*
 	*	@param Int PTTridi\Cekmutasi\Support\Constant $method
 	*
-	*	@param Array $params
+	*	@param Array Request Parameters $params
 	*
 	*	@return Object
 	*
