@@ -17,18 +17,58 @@ class OVO extends Container
 	}
 
 	/**
-	*	Search OVO mutation
+	*	Get OVO mutation (max 1000)
 	*
-	*	@param Array $options
+	*	@param Array Search Filter $filters
 	*
 	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
-	public function search($options = [])
+	public function mutation($filters = [])
 	{
 		return $this->curl('/ovo/search', Constant::HTTP_POST, [
-			'search'	=> $options
+			'search'	=> $filters
+		]);
+	}
+
+	/**
+	*	Get all registered ovo accounts
+	*
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*
+	**/
+
+	public function list()
+	{
+		return $this->curl('/ovo/list', Constant::HTTP_POST);
+	}
+
+	/**
+	*	Get total balance of registered ovo accounts
+	*
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*
+	**/
+
+	public function balance()
+	{
+		return $this->curl('/ovo/balance', Constant::HTTP_POST);
+	}
+
+	/**
+	*	Get ovo account detail
+	*
+	*	@param Int OVO ID $id
+	*
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*
+	**/
+
+	public function detail(int $id)
+	{
+		return $this->curl('/ovo/detail', Constant::HTTP_POST, [
+			'id'	=> intval($id)
 		]);
 	}
 

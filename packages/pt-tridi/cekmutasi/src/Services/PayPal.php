@@ -17,23 +17,63 @@ class PayPal extends Container
 	}
 
 	/**
-	*	Search PayPal mutation
+	*	Get PayPal mutation (max 1000)
 	*
-	*	@param Array $options
+	*	@param Array Search Filter $filters
 	*
 	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
-	public function search($options = [])
+	public function mutation($filters = [])
 	{
 		return $this->curl('/paypal/search', Constant::HTTP_POST, [
-			'search'	=> $options
+			'search'	=> $filters
 		]);
 	}
 
 	/**
-	*	Get payment detail
+	*	Get all registered paypal accounts
+	*
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*
+	**/
+
+	public function list()
+	{
+		return $this->curl('/paypal/list', Constant::HTTP_POST);
+	}
+
+	/**
+	*	Get total balance of registered paypal accounts
+	*
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*
+	**/
+
+	public function balance()
+	{
+		return $this->curl('/paypal/balance', Constant::HTTP_POST);
+	}
+
+	/**
+	*	Get paypal account detail
+	*
+	*	@param Int PayPal ID $id
+	*
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*
+	**/
+
+	public function detail(int $id)
+	{
+		return $this->curl('/paypal/detail', Constant::HTTP_POST, [
+			'id'	=> intval($id)
+		]);
+	}
+
+	/**
+	*	Get transaction detail
 	*
 	*	@param String $username
 	*
@@ -43,9 +83,9 @@ class PayPal extends Container
 	*
 	**/
 
-	public function detail($username, $transactionid)
+	public function trxDetail($username, $transactionid)
 	{
-		return $this->curl('/paypal/detail', Constant::HTTP_POST, [
+		return $this->curl('/paypal/transaction/detail', Constant::HTTP_POST, [
 			'username'	=> $username,
 			'transactionid' => $transactionid
 		]);

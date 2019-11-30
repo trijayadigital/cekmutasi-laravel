@@ -16,19 +16,59 @@ class GoPay extends Container
 		$this->config = $configs;
 	}
 
-		/**
-	*	Search GoPay mutation
+	/**
+	*	Get GoPay mutation (max 1000)
 	*
-	*	@param Array $options
+	*	@param Array Search Filter $filters
 	*
 	*	@return Object PTTridi\Cekmutasi\Container::curl()
 	*
 	**/
 
-	public function search($options = [])
+	public function mutation($filters = [])
 	{
 		return $this->curl('/gopay/search', Constant::HTTP_POST, [
-			'search'	=> $options
+			'search'	=> $filters
+		]);
+	}
+
+	/**
+	*	Get all registered gopay accounts
+	*
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*
+	**/
+
+	public function list()
+	{
+		return $this->curl('/gopay/list', Constant::HTTP_POST);
+	}
+
+	/**
+	*	Get total balance of registered gopay accounts
+	*
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*
+	**/
+
+	public function balance()
+	{
+		return $this->curl('/gopay/balance', Constant::HTTP_POST);
+	}
+
+	/**
+	*	Get gopay account detail
+	*
+	*	@param Int GoPay ID $id
+	*
+	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*
+	**/
+
+	public function detail(int $id)
+	{
+		return $this->curl('/gopay/detail', Constant::HTTP_POST, [
+			'id'	=> intval($id)
 		]);
 	}
 }
