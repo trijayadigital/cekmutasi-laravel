@@ -5,51 +5,45 @@ Development &amp; Integration Toolkit for Laravel Framework (5.0+). For other we
 ## Installation
 
 - Run command
-
-<code><pre>composer require trijayadigital/cekmutasi-laravel</pre></code>
+<code>composer require trijayadigital/cekmutasi-laravel</code>
 
 - Open your **config/app.php** and add this code to the providers array, it will looks like:
-
-<pre><code>'providers' =&gt; [
+<code>'providers' => [
 
       // other providers
 
       Tridi\Cekmutasi\ServiceProvider::class,
 
-],</code></pre>
+],</code>
 
 - Add this code to your class aliases array
-
-<pre><code>'aliases' =&gt; [
+<code>'aliases' => [
 
       // other aliases
 
       'Cekmutasi' => Tridi\Cekmutasi\Facade::class,
 
-],</code></pre>
+],</code>
 
 - Run command
-
-<pre><code>composer dump-autoload</code></pre>
+<code>composer dump-autoload</code>
 
 - Then
-
-<pre><code>php artisan vendor:publish --provider="Tridi\Cekmutasi\ServiceProvider"</code></pre>
+<code>php artisan vendor:publish --provider="Tridi\Cekmutasi\ServiceProvider"</code>
 
 - Edit **config/cekmutasi.php** and add your API Key & Signature, or you can add this code to your **.env** file
-
-<pre><code>
+<code>
 	
 CEKMUTASI_API_KEY="place your api key here"
 CEKMUTASI_API_SIGNATURE="place your api signature here"
 
- </code></pre>
+ </code>
 
 ## How To Use?
 
 You can use cekmutasi library by importing cekmutasi class. Here is the example of using cekmutasi class in Controller
 
-<pre><code>&#x3C;?php
+<pre><code><?php
 
 namespace App\Http\Controllers;
 
@@ -59,10 +53,10 @@ class AnotherController extends Controller
 {
 	public function index()
 	{
-	    $mutation = Cekmutasi::bank()-&#x3E;mutation([
-					'date'		=&gt; [
-						'from'	=&gt; date('Y-m-d') . ' 00:00:00',
-						'to'	=&gt; date('Y-m-d') . ' 23:59:59'
+	    $mutation = Cekmutasi::bank()->mutation([
+					'date'		=> [
+						'from'	=> date('Y-m-d') . ' 00:00:00',
+						'to'	=> date('Y-m-d') . ' 23:59:59'
 					]
 				]);
 
@@ -70,7 +64,7 @@ class AnotherController extends Controller
 	}
 }
 
-?&#x3E;</code></pre>
+?></code></pre>
 
 For further example, you can check out in **CekmutasiController.php** included in this package
 
