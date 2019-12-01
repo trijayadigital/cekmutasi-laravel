@@ -11,8 +11,8 @@ class Container
 
     public function __construct()
     {
-        $this->apiKey = env('CEKMUTASI_API_KEY', '');
-        $this->apiSignature = env('CEKMUTASI_API_SIGNATURE', '');
+        $this->apiKey = config('cekmutasi.api_key', '');
+        $this->apiSignature = config('cekmutasi.api_signature', '');
     }
 
     /**
