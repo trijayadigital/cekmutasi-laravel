@@ -1,9 +1,9 @@
 <?php
 
-namespace PTTridi\Cekmutasi\Services;
+namespace Tridi\Cekmutasi\Services;
 
-use PTTridi\Cekmutasi\Container;
-use PTTridi\Cekmutasi\Support\Constant;
+use Tridi\Cekmutasi\Container;
+use Tridi\Cekmutasi\Support\Constant;
 
 class PayPal extends Container
 {
@@ -21,7 +21,7 @@ class PayPal extends Container
 	*
 	*	@param Array Search Filter $filters
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -35,7 +35,7 @@ class PayPal extends Container
 	/**
 	*	Get all registered paypal accounts
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -47,7 +47,7 @@ class PayPal extends Container
 	/**
 	*	Get total balance of registered paypal accounts
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -61,7 +61,7 @@ class PayPal extends Container
 	*
 	*	@param Int PayPal ID $id
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -79,7 +79,7 @@ class PayPal extends Container
 	*
 	*	@param String $transactionid
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 

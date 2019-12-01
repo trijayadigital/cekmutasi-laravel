@@ -1,0 +1,34 @@
+{
+    "name": "trijayadigital/cekmutasi-laravel",
+    "description": "Development & Integration Toolkit for Cekmutasi.co.id",
+    "type": "library",
+    "homepage": "https://cekmutasi.co.id",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/trijayadigital/cekmutasi-laravel/issues",
+        "source": "https://github.com/trijayadigital/cekmutasi-laravel"
+    },
+    "authors": [
+        {
+            "name": "PT Trijaya Digital Grup",
+            "email": "cs@p-store.net"
+        },
+        {
+            "name": "Zeros Technology",
+            "email": "admin@zeros.co.id"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    	"php": ">=5.4",
+    	"laravel/framework": ">=5.0",
+    },
+    "autoload": {
+    	"psr-4" : {
+          "Tridi\\Cekmutasi\\": "src"
+        }
+    },
+    "require-dev": {
+    	"phpunit/phpunit": "^7",
+    }
+}

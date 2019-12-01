@@ -1,12 +1,12 @@
 <?php
 
-namespace PTTridi\Cekmutasi;
+namespace Tridi\Cekmutasi;
 
-use PTTridi\Cekmutasi\Services\Bank;
-use PTTridi\Cekmutasi\Services\PayPal;
-use PTTridi\Cekmutasi\Services\OVO;
-use PTTridi\Cekmutasi\Services\GoPay;
-use PTTridi\Cekmutasi\Support\Constant;
+use Tridi\Cekmutasi\Services\Bank;
+use Tridi\Cekmutasi\Services\PayPal;
+use Tridi\Cekmutasi\Services\OVO;
+use Tridi\Cekmutasi\Services\GoPay;
+use Tridi\Cekmutasi\Support\Constant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -22,7 +22,7 @@ class Cekmutasi extends Container
 	*
 	*	@param Array $configs
 	*
-	*	@return Object PTTridi\Cekmutasi\Services\Bank
+	*	@return Object Tridi\Cekmutasi\Services\Bank
 	*
 	**/
 
@@ -36,7 +36,7 @@ class Cekmutasi extends Container
 	*
 	*	@param Array $configs
 	*
-	*	@return Object PTTridi\Cekmutasi\Services\PayPal
+	*	@return Object Tridi\Cekmutasi\Services\PayPal
 	*
 	**/
 
@@ -50,7 +50,7 @@ class Cekmutasi extends Container
 	*
 	*	@param Array $configs
 	*
-	*	@return Object PTTridi\Cekmutasi\Services\GoPay
+	*	@return Object Tridi\Cekmutasi\Services\GoPay
 	*
 	**/
 
@@ -64,7 +64,7 @@ class Cekmutasi extends Container
 	*
 	*	@param Array $configs
 	*
-	*	@return Object PTTridi\Cekmutasi\Services\OVO
+	*	@return Object Tridi\Cekmutasi\Services\OVO
 	*
 	**/
 
@@ -76,7 +76,7 @@ class Cekmutasi extends Container
     /**
 	*	Check your IP
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -88,7 +88,7 @@ class Cekmutasi extends Container
     /**
 	*	Check your cekmutasi balance
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 

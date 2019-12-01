@@ -1,9 +1,9 @@
 <?php
 
-namespace PTTridi\Cekmutasi\Services;
+namespace Tridi\Cekmutasi\Services;
 
-use PTTridi\Cekmutasi\Container;
-use PTTridi\Cekmutasi\Support\Constant;
+use Tridi\Cekmutasi\Container;
+use Tridi\Cekmutasi\Support\Constant;
 
 class OVO extends Container
 {
@@ -21,7 +21,7 @@ class OVO extends Container
 	*
 	*	@param Array Search Filter $filters
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -35,7 +35,7 @@ class OVO extends Container
 	/**
 	*	Get all registered ovo accounts
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -47,7 +47,7 @@ class OVO extends Container
 	/**
 	*	Get total balance of registered ovo accounts
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -61,7 +61,7 @@ class OVO extends Container
 	*
 	*	@param Int OVO ID $id
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -77,7 +77,7 @@ class OVO extends Container
 	*
 	*	@param String $sourceNumber
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -97,7 +97,7 @@ class OVO extends Container
 	*
 	*	@param String $destinationNumber
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -121,7 +121,7 @@ class OVO extends Container
 	*
 	*	@param String $note
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -140,7 +140,7 @@ class OVO extends Container
 	*
 	*	@param String $uuid
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -158,7 +158,7 @@ class OVO extends Container
 	*
 	*	@param String $destinationNumber
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 
@@ -179,7 +179,7 @@ class OVO extends Container
 	*
 	*	@param Int $amount
 	*
-	*	@return Object PTTridi\Cekmutasi\Container::curl()
+	*	@return Object Tridi\Cekmutasi\Container::curl()
 	*
 	**/
 

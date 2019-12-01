@@ -1,6 +1,6 @@
 <?php
 
-namespace PTTridi\Cekmutasi;
+namespace Tridi\Cekmutasi;
 
 use Illuminate\Support\Facades\Facade;
 

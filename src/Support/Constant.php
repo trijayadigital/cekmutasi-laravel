@@ -1,6 +1,6 @@
 <?php
 
-namespace PTTridi\Cekmutasi\Support;
+namespace Tridi\Cekmutasi\Support;
 
 class Constant
 {

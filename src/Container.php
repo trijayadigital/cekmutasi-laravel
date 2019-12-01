@@ -1,8 +1,8 @@
 <?php
 
-namespace PTTridi\Cekmutasi;
+namespace Tridi\Cekmutasi;
 
-use PTTridi\Cekmutasi\Support\Constant;
+use Tridi\Cekmutasi\Support\Constant;
 
 class Container
 {
