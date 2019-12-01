@@ -32,18 +32,14 @@ Development &amp; Integration Toolkit for Laravel Framework (5.0+). For other we
 <pre><code>php artisan vendor:publish --provider="Tridi\Cekmutasi\ServiceProvider"</code></pre>
 
 - Edit **config/cekmutasi.php** and add your API Key & Signature, or you can add this code to your **.env** file
-<pre><code>
-	
-CEKMUTASI_API_KEY="place your api key here"
-CEKMUTASI_API_SIGNATURE="place your api signature here"
-
- </code></pre>
+<pre><code>CEKMUTASI_API_KEY="place your api key here"
+CEKMUTASI_API_SIGNATURE="place your api signature here"</code></pre>
 
 ## How To Use?
 
 You can use cekmutasi library by importing cekmutasi class. Here is the example of using cekmutasi class in Controller
 
-<pre><code><?php
+<pre><code>&lt;?php
 
 namespace App\Http\Controllers;
 
@@ -64,7 +60,7 @@ class AnotherController extends Controller
 	}
 }
 
-?></code></pre>
+?&gt;<code></pre>
 
 For further example, you can check out in **CekmutasiController.php** included in this package
 
