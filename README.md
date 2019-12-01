@@ -2,6 +2,12 @@
 
 Development &amp; Integration Toolkit for Laravel Framework (5.0+). For other web framework/language/plugin, please go to https://github.com/trijayadigital/cekmutasi
 
+## Requirements
+
+- PHP 5.4+
+- Laravel Framework v5.0+
+- cURL extension enabled
+
 ## Installation
 
 - Run command
