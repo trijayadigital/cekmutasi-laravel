@@ -3,9 +3,9 @@
 namespace Tridi\Cekmutasi;
 
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
-class CekmutasiServiceProvider extends ServiceProvider
+class ServiceProvider extends LaravelServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -14,7 +14,9 @@ class CekmutasiServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/config.php' => config_path('cekmutasi.php'),
+        ]);
     }
 
     /**

@@ -2,9 +2,9 @@
 
 namespace Tridi\Cekmutasi;
 
-use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\Facade as LaravelFacade;
 
-class CekmutasiFacade extends Facade
+class Facade extends LaravelFacade
 {
 	protected static function getFacadeAccessor()
 	{
