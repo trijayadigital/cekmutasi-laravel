@@ -20,7 +20,7 @@ class Container
 	*
 	*	@param String $endpoint
 	*
-	*	@param Int PTTridi\Cekmutasi\Support\Constant $method
+	*	@param Int Tridi\Cekmutasi\Support\Constant $method
 	*
 	*	@param Array Request Parameters $params
 	*
