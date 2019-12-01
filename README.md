@@ -60,7 +60,7 @@ class AnotherController extends Controller
 	}
 }
 
-?&gt;<code></pre>
+?&gt;</code></pre>
 
 For further example, you can check out in **CekmutasiController.php** included in this package
 
