@@ -5,39 +5,39 @@ Development &amp; Integration Toolkit for Laravel Framework (5.0+). For other we
 ## Installation
 
 - Run command
-<code>composer require trijayadigital/cekmutasi-laravel</code>
+<pre><code>composer require trijayadigital/cekmutasi-laravel</code></pre>
 
 - Open your **config/app.php** and add this code to the providers array, it will looks like:
-<code>'providers' => [
+<pre><code>'providers' => [
 
       // other providers
 
       Tridi\Cekmutasi\ServiceProvider::class,
 
-],</code>
+],</code></pre>
 
 - Add this code to your class aliases array
-<code>'aliases' => [
+<pre><code>'aliases' => [
 
       // other aliases
 
       'Cekmutasi' => Tridi\Cekmutasi\Facade::class,
 
-],</code>
+],</code></pre>
 
 - Run command
-<code>composer dump-autoload</code>
+<pre><code>composer dump-autoload</code></pre>
 
 - Then
-<code>php artisan vendor:publish --provider="Tridi\Cekmutasi\ServiceProvider"</code>
+<pre><code>php artisan vendor:publish --provider="Tridi\Cekmutasi\ServiceProvider"</code></pre>
 
 - Edit **config/cekmutasi.php** and add your API Key & Signature, or you can add this code to your **.env** file
-<code>
+<pre><code>
 	
 CEKMUTASI_API_KEY="place your api key here"
 CEKMUTASI_API_SIGNATURE="place your api signature here"
 
- </code>
+ </code></pre>
 
 ## How To Use?
 
