@@ -68,7 +68,7 @@ class AnotherController extends Controller
 
 ?&gt;</code></pre>
 
-Untuk contoh lainnya, anda dapat memeriksa di file **CekmutasiController.php** yang tersedia di dalam package ini
+Untuk contoh lainnya, anda dapat memeriksa di file **example/CekmutasiController.php** yang tersedia di dalam package ini
 
 ## Method Yang Tersedia
 

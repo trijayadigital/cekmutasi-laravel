@@ -70,7 +70,7 @@ class AnotherController extends Controller
 
 ?&gt;</code></pre>
 
-For further example, you can check out in **CekmutasiController.php** included in this package
+For further example, you can check out in **example/CekmutasiController.php** included in this package
 
 ## Available Methods
 
