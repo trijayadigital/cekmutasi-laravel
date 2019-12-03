@@ -1,10 +1,23 @@
 <?php
 
+/**
+*	Cekmutasi.co.id Confirguration
+*
+*	If you don't have an account, please register first
+*	in https://cekmutasi.co.id/app/register. The first
+*	100 user registered today will be rewarded with IDR
+*	25.000 trial balance.
+*
+**/
+
 return [
 
 	/**
 	*
-	*	API Key: https://cekmutasi.co.id/app/integration
+	*	Enter your API Key
+	*
+	*	To get your API Key, please go to:
+	*	https://cekmutasi.co.id/app/integration
 	*
 	**/
 
@@ -12,7 +25,10 @@ return [
 
 	/**
 	*
-	*	API Signature: https://cekmutasi.co.id/app/integration
+	*	Enter your API Signature
+	*
+	*	To get your API Signature, please go to:
+	*	https://cekmutasi.co.id/app/integration
 	*
 	**/
 
