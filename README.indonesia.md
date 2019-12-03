@@ -1,61 +1,51 @@
 # Cekmutasi X Laravel Framework
-Development &amp; Integration Toolkit for Laravel Framework (5.0+). Untuk web framework/bahasa/plugin lainnya, silahkan kunjungi https://github.com/PT-Tridi/Cekmutasi.co.id
 
-## Instalasi
-- Salin folder **packages** folder under your laravel root directory, or you can skip to **packages/pt-tridi** if **packages** folder already exists (http://prntscr.com/lbg8pl)
-- Open your **config/app.php** and add this code to the providers array, it will looks like:
+Development &amp; Integration Toolkit untuk Laravel Framework (5.0+). Untuk framework/bahasa/plugin lainnya, silahkan kunjungi https://github.com/trijayadigital/cekmutasi
 
-<pre><code>'providers' =&gt; [
+## Persyaratan
+
+- PHP 5.4+
+- Laravel Framework v5.0+
+- cURL extension diaktifkan
+
+## Pemasangan
+
+- Jalankan perintah
+<pre><code>composer require trijayadigital/cekmutasi-laravel</code></pre>
+
+- Buka file **config/app.php** dan tambahkan kode berikut ke array provider, akan terlihat seperti berikut:
+<pre><code>'providers' => [
 
       // other providers
 
-      PTTridi\Cekmutasi\CekmutasiServiceProvider::class,
+      Tridi\Cekmutasi\ServiceProvider::class,
 
 ],</code></pre>
 
-- Add this code to your class aliases array
-
-<pre><code>'aliases' =&gt; [
+- Tambahkan kode berikut ke array aliases
+<pre><code>'aliases' => [
 
       // other aliases
 
-      'Cekmutasi' => PTTridi\Cekmutasi\CekmutasiFacade::class,
+      'Cekmutasi' => Tridi\Cekmutasi\Facade::class,
 
 ],</code></pre>
 
-- Open your **composer.json** in the root folder then add this code to the psr-4 on autoload section, it will looks like:
-
-<pre><code>&quot;autoload&quot;: {
-
-        // other section
-        
-        &quot;psr-4&quot;: {
-            &quot;App\\&quot;: &quot;app/&quot;,
-            &quot;PTTridi\\Cekmutasi\\&quot;: &quot;packages/pt-tridi/cekmutasi/src&quot;,
-        },
-        
-       // other section
-       
-},</code></pre>
-
-- Then run composer command on your Command Line Console
-
+- Jalankan perintah
 <pre><code>composer dump-autoload</code></pre>
 
-- Add **CEKMUTASI_API_KEY** & **CEKMUTASI_API_SIGNATURE** to your **.env** file, it will looks like
+- Lalu
+<pre><code>php artisan vendor:publish --provider="Tridi\Cekmutasi\ServiceProvider"</code></pre>
 
-<pre><code>// other env variable
-	
-CEKMUTASI_API_KEY="place your api key here"
-CEKMUTASI_API_SIGNATURE="place your api signature here"
+- Edit **config/cekmutasi.php** dan tambahkan API Key & Signature Anda, atau Anda dapat menambahkan kode berikut ke file **.env**
+<pre><code>CEKMUTASI_API_KEY="masukkan api key disini"
+CEKMUTASI_API_SIGNATURE="masukkan api signature disini"</code></pre>
 
- </code></pre>
+## Bagaimana Cara Menggunakan?
 
-## How To Use?
+Anda dapat menggunakan library cekmutasi dengan mengimpor class cekmutasi. Berikut adalah contoh penggunaan class cekmutasi di Controller
 
-You can use cekmutasi library by importing cekmutasi class. Here is the example of using cekmutasi class in Controller
-
-<pre><code>&#x3C;?php
+<pre><code>&lt;?php
 
 namespace App\Http\Controllers;
 
@@ -65,10 +55,10 @@ class AnotherController extends Controller
 {
 	public function index()
 	{
-	    $mutation = Cekmutasi::bank()-&#x3E;mutation([
-					'date'		=&gt; [
-						'from'	=&gt; date('Y-m-d') . ' 00:00:00',
-						'to'	=&gt; date('Y-m-d') . ' 23:59:59'
+	    $mutation = Cekmutasi::bank()->mutation([
+					'date'		=> [
+						'from'	=> date('Y-m-d') . ' 00:00:00',
+						'to'	=> date('Y-m-d') . ' 23:59:59'
 					]
 				]);
 
@@ -76,95 +66,95 @@ class AnotherController extends Controller
 	}
 }
 
-?&#x3E;</code></pre>
+?&gt;</code></pre>
 
-For further example, you can check out in **CekmutasiController.php** included in this package
+Untuk contoh lainnya, anda dapat memeriksa di file **CekmutasiController.php** yang tersedia di dalam package ini
 
-## Available Methods
+## Method Yang Tersedia
 
-* ### [balance()](packages/pt-tridi/cekmutasi/src/Cekmutasi.php#L94)
-	Get cekmutasi account balance
+* ### balance()
+	Mendapatkan info saldo akun Cekmutasi
 
-* ### [checkIP()](packages/pt-tridi/cekmutasi/src/Cekmutasi.php#L82)
-	Check your detected IP address. This IP should be added to Whitelist IP in your integration if you want to use HTTP Request method or some plugins
+* ### checkIP()
+	Memeriksa alamat IP Anda yang terdeteksi. IP ini harus ditambahkan ke Whitelist IP dalam pengaturan integrasi Anda jika Anda ingin menggunakan metode HTTP Request atau beberapa plugin
 	
-* ### [catchIPN()](packages/pt-tridi/cekmutasi/src/Cekmutasi.php#L108)
-	Handle callback/ipn data. This method is highly recommended for use because it has pre-build callback/ipn security verification
+* ### catchIPN()
+	Menangani data callback / ipn. Metode ini sangat disarankan untuk digunakan karena memiliki verifikasi keamanan callback / ipn
 	
-* ### [bank()](packages/pt-tridi/cekmutasi/src/Cekmutasi.php#L28)
-	Load Bank service. Below are the available methods from bank service
-	- #### [list()](packages/pt-tridi/cekmutasi/src/Services/Bank.php#L42)
-		Get bank account list
+* ### bank()
+	Memuat layanan Bank. Di bawah ini adalah metode yang tersedia dari layanan bank
+	- #### list()
+		Dapatkan daftar rekening bank
 		
-	- #### [detail()](packages/pt-tridi/cekmutasi/src/Services/Bank.php#L68)
-		Get bank account detail
+	- #### detail()
+		Dapatkan detail rekening bank
 		
-	- #### [balance()](packages/pt-tridi/cekmutasi/src/Services/Bank.php#L54)
-		Get total balance of registered bank accounts
+	- #### balance()
+		Dapatkan saldo total rekening bank terdaftar
 		
-	- #### [mutation()](packages/pt-tridi/cekmutasi/src/Services/Bank.php#L28)
-		Get bank mutation (max 1000)
+	- #### mutation()
+		Dapatkan mutasi bank (maks 1000)
 
-* ### [paypal()](packages/pt-tridi/cekmutasi/src/Cekmutasi.php#L42)
-	Load PayPal service. Below are the available methods from paypal service
-	- #### [list()](packages/pt-tridi/cekmutasi/src/Services/PayPal.php#L42)
-		Get paypal account list
+* ### paypal()
+	Muat layanan PayPal. Di bawah ini adalah metode yang tersedia dari layanan paypal
+	- #### list()
+		Dapatkan daftar akun paypal
 		
-	- #### [detail()](packages/pt-tridi/cekmutasi/src/Services/PayPal.php#L68)
-		Get paypal account detail
+	- #### detail()
+		Dapatkan detail akun paypal
 		
-	- #### [balance()](packages/pt-tridi/cekmutasi/src/Services/PayPal.php#L54)
-		Get total balance of registered paypal accounts
+	- #### balance()
+		Dapatkan saldo total akun paypal terdaftar
 		
-	- #### [mutation()](packages/pt-tridi/cekmutasi/src/Services/PayPal.php#L28)
-		Get paypal mutation (max 1000)
+	- #### mutation()
+		Dapatkan mutasi paypal (maks 1000)
 	
-* ### [gopay()](packages/pt-tridi/cekmutasi/src/Cekmutasi.php#L56)
-	Load GoPay service. Below are the available methods from gopay service
-	- #### [list()](packages/pt-tridi/cekmutasi/src/Services/GoPay.php#L42)
-		Get gopay account list
+* ### gopay()
+	Muat layanan GoPay. Di bawah ini adalah metode yang tersedia dari layanan gopay
+	- #### list()
+		Dapatkan daftar akun gopay
 		
-	- #### [detail()](packages/pt-tridi/cekmutasi/src/Services/GoPay.php#L68)
-		Get gopay account detail
+	- #### detail()
+		Dapatkan detail akun gopay
 		
-	- #### [balance()](packages/pt-tridi/cekmutasi/src/Services/GoPay.php#L54)
-		Get total balance of registered gopay accounts
+	- #### balance()
+		Dapatkan total saldo akun gopay terdaftar
 		
-	- #### [mutation()](packages/pt-tridi/cekmutasi/src/Services/GoPay.php#L28)
-		Get gopay mutation (max 1000)
+	- #### mutation()
+		Dapatkan mutasi gopay (maks 1000)
 	
-* ### [ovo()](packages/pt-tridi/cekmutasi/src/Cekmutasi.php#L70)
-	Load OVO service. Below are the available methods from ovo service
-	- #### [list()](packages/pt-tridi/cekmutasi/src/Services/OVO.php#L42)
-		Get ovo account list
+* ### ovo()
+	Memuat layanan OVO. Di bawah ini adalah metode yang tersedia dari layanan ovo
+	- #### list()
+		Dapatkan daftar akun ovo
 		
-	- #### [detail()](packages/pt-tridi/cekmutasi/src/Services/OVO.php#L68)
-		Get ovo account detail
+	- #### detail()
+		Dapatkan detail akun ovo
 		
-	- #### [balance()](packages/pt-tridi/cekmutasi/src/Services/OVO.php#L54)
-		Get total balance of registered ovo accounts
+	- #### balance()
+		Dapatkan saldo total akun ovo terdaftar
 		
-	- #### [mutation()](packages/pt-tridi/cekmutasi/src/Services/OVO.php#L28)
-		Get ovo mutation (max 1000)
+	- #### mutation()
+		Dapatkan mutasi ovo (maks 1000)
 		
-	- #### [transferBankList()](packages/pt-tridi/cekmutasi/src/Services/OVO.php#L84)
-		Get the available destination banks
+	- #### transferBankList()
+		Dapatkan bank tujuan yang tersedia
 	
-	- #### [transferBankInquiry()](packages/pt-tridi/cekmutasi/src/Services/OVO.php#L104)
-		Make transfer bank inquiry
+	- #### transferBankInquiry()
+		Buat inquiry transfer bank
 		
-	- #### [transferBank()](packages/pt-tridi/cekmutasi/src/Services/OVO.php#L128)
-		Proccess transfer from OVO to bank
+	- #### transferBank()
+		Proses transfer dari OVO ke bank
 		
-	- #### [transferBankDetail()](packages/pt-tridi/cekmutasi/src/Services/OVO.php#L147)
-		Get transaction detail of bank transfer
+	- #### transferBankDetail()
+		Dapatkan detail transaksi transfer bank
 	
-	- #### [transferOVOInquiry()](packages/pt-tridi/cekmutasi/src/Services/OVO.php#L165)
-		Make transfer OVO inquiry
+	- #### transferOVOInquiry()
+		Lakukan inquiry transfer OVO
 		
-	- #### [transferOVO()](packages/pt-tridi/cekmutasi/src/Services/OVO.php#L186)
-		Proccess transfer from OVO to OVO
+	- #### transferOVO()
+		Proses transfer dari OVO ke OVO
 
-## Security Advice
+## Saran Keamanan
 
-For the best way to handle Callback/IPN, we strongly recommend you to use the **catchIPN()** method with pre-build security validation to handle and verifiying incoming callback/ipn data.
+Untuk cara terbaik menangani Callback / IPN, kami sangat menyarankan Anda untuk menggunakan metode **catchIPN()** dengan validasi keamanan untuk memverifikasi data Callback / IPN yang masuk.
