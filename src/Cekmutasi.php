@@ -140,7 +140,7 @@ class Cekmutasi extends Container
         }
         else
         {
-            if( $this->apiSignature != $incomingSignature ) {
+            if( $this->apiSignature !== $incomingSignature ) {
                 Log::info(get_class($this).': Invalid Signature, ' . $this->apiSignature . ' vs ' . $incomingSignature);
                 exit("Invalid signature!");
             }
