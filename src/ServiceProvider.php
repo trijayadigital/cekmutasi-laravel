@@ -18,10 +18,10 @@ namespace Tridi\Cekmutasi;
 *
 **/
 
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
 
-class ServiceProvider extends LaravelServiceProvider
+class ServiceProvider extends LaravelServiceProvider implements DeferrableProvider
 {
     /**
      * Bootstrap the application services.
@@ -42,8 +42,18 @@ class ServiceProvider extends LaravelServiceProvider
      */
     public function register()
     {
-        App::bind('Cekmutasi', function() {
-            return new Cekmutasi;
+        $this->app->singleton(\Cekmutasi::class, function ($app) {
+            return new Cekmutasi();
         });
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [\Cekmutasi::class];
     }
 }
