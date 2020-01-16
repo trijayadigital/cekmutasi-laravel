@@ -11,7 +11,7 @@ Development &amp; Integration Toolkit untuk Laravel Framework (5.0+). Untuk fram
 ## Pemasangan
 
 - Jalankan perintah
-<pre><code>composer require trijayadigital/cekmutasi-laravel</code></pre>
+<pre><code>composer require trijayadigital/cekmutasi-laravel:dev-master</code></pre>
 
 - Buka file **config/app.php** dan tambahkan kode berikut ke array provider, akan terlihat seperti berikut:
 <pre><code>'providers' => [
