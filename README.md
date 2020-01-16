@@ -13,7 +13,7 @@ Development &amp; Integration Toolkit for Laravel Framework (5.0+). For other we
 ## Installation
 
 - Run command
-<pre><code>composer require trijayadigital/cekmutasi-laravel</code></pre>
+<pre><code>composer require trijayadigital/cekmutasi-laravel:dev-master</code></pre>
 
 - Open your **config/app.php** and add this code to the providers array, it will looks like:
 <pre><code>'providers' => [
