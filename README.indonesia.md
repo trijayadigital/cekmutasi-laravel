@@ -10,10 +10,12 @@ Development &amp; Integration Toolkit untuk Laravel Framework (5.0+). Untuk fram
 
 ## Pemasangan
 
-- Jalankan perintah
+#### Untuk Laravel 5.5+ LEWETI langkah 2 & 3 karena kami telah menggunakan fitur Package Discovery sehingga Laravel akan mendaftarkan Service Provider dan Alias secara otomatis pada saat pemasangan
+
+1. Jalankan perintah
 <pre><code>composer require trijayadigital/cekmutasi-laravel:dev-master</code></pre>
 
-- Buka file **config/app.php** dan tambahkan kode berikut ke array provider, akan terlihat seperti berikut:
+2. Buka file **config/app.php** dan tambahkan kode berikut ke array provider, akan terlihat seperti berikut:
 <pre><code>'providers' => [
 
       // other providers
@@ -22,7 +24,7 @@ Development &amp; Integration Toolkit untuk Laravel Framework (5.0+). Untuk fram
 
 ],</code></pre>
 
-- Tambahkan kode berikut ke array aliases
+3. Tambahkan kode berikut ke array aliases
 <pre><code>'aliases' => [
 
       // other aliases
@@ -31,13 +33,13 @@ Development &amp; Integration Toolkit untuk Laravel Framework (5.0+). Untuk fram
 
 ],</code></pre>
 
-- Jalankan perintah
+4. Jalankan perintah
 <pre><code>composer dump-autoload</code></pre>
 
-- Lalu
+5. Lalu
 <pre><code>php artisan vendor:publish --provider="Tridi\Cekmutasi\ServiceProvider"</code></pre>
 
-- Edit **config/cekmutasi.php** dan tambahkan API Key & Signature Anda, atau Anda dapat menambahkan kode berikut ke file **.env**
+6. Edit **config/cekmutasi.php** dan tambahkan API Key & Signature Anda, atau Anda dapat menambahkan kode berikut ke file **.env**
 <pre><code>CEKMUTASI_API_KEY="masukkan api key disini"
 CEKMUTASI_API_SIGNATURE="masukkan api signature disini"</code></pre>
 
