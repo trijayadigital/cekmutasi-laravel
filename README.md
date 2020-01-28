@@ -12,7 +12,7 @@ Development &amp; Integration Toolkit for Laravel Framework (5.0+). For other we
 
 ## Installation
 
-#### For Laravel 5.5+ SKIP step 2 & 3 because we already using Package Discovery so Laravel will automatically register the Service Provider and Alias at the time of installation
+#### For Laravel 5.5+ SKIP step 2 & 3 because we already use Package Discovery feature so Laravel will automatically register the Service Provider and Alias at the time of installation
 
 1. Run command
 <pre><code>composer require trijayadigital/cekmutasi-laravel:dev-master</code></pre>
