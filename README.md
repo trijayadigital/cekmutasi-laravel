@@ -12,10 +12,12 @@ Development &amp; Integration Toolkit for Laravel Framework (5.0+). For other we
 
 ## Installation
 
-- Run command
+#### For Laravel 5.5+ SKIP step 2 & 3 because we already using Package Discovery so Laravel will automatically register the Service Provider and Alias at the time of installation
+
+1. Run command
 <pre><code>composer require trijayadigital/cekmutasi-laravel:dev-master</code></pre>
 
-- Open your **config/app.php** and add this code to the providers array, it will looks like:
+2. Open your **config/app.php** and add this code to the providers array, it will looks like:
 <pre><code>'providers' => [
 
       // other providers
@@ -24,7 +26,7 @@ Development &amp; Integration Toolkit for Laravel Framework (5.0+). For other we
 
 ],</code></pre>
 
-- Add this code to your class aliases array
+3. Add this code to your class aliases array
 <pre><code>'aliases' => [
 
       // other aliases
@@ -33,13 +35,13 @@ Development &amp; Integration Toolkit for Laravel Framework (5.0+). For other we
 
 ],</code></pre>
 
-- Run command
+4. Run command
 <pre><code>composer dump-autoload</code></pre>
 
-- Then
+5. Then
 <pre><code>php artisan vendor:publish --provider="Tridi\Cekmutasi\ServiceProvider"</code></pre>
 
-- Edit **config/cekmutasi.php** and add your API Key & Signature, or you can add this code to your **.env** file
+6. Edit **config/cekmutasi.php** and add your API Key & Signature, or you can add this code to your **.env** file
 <pre><code>CEKMUTASI_API_KEY="place your api key here"
 CEKMUTASI_API_SIGNATURE="place your api signature here"</code></pre>
 
